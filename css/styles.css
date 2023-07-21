@@ -33,6 +33,8 @@ body {
 img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -50,6 +52,7 @@ main {
 }
 
 .header {
+    /* padding: 24px 0; */
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -81,8 +84,7 @@ ol {
     font-size: 18px;
     line-height: 1.17;
     letter-spacing: 0.03em;
-    padding: 24px 0;
-    margin-right: 76px;
+    margin: 24px 76px 24px 0px;
 }
 
 .hlogo-span {
@@ -209,6 +211,10 @@ ol {
         padding-right: 32px;
     }
 
+    .header {
+        padding: 0;
+    }
+
     .addr-ul {
         flex-direction: column;
         gap: 3px;
@@ -239,8 +245,6 @@ ol {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 432px;
-    margin-bottom: 96px;
     padding: 112px 0;
 }
 
@@ -317,9 +321,6 @@ ol {
 
 /* for tablet screen */
 @media screen and (min-width: 768px) {
-    .section-hero {
-        height: 436px;
-    }
 
     .hero-title {
         width: 496px;
@@ -337,7 +338,6 @@ ol {
 /* for desctop screen */
 @media screen and (min-width: 1158px) {
     .section-hero {
-        height: 600px;
         padding: 188px 0;
     }
     .hero-title {
@@ -350,7 +350,7 @@ ol {
 /* second section */
 
 .second-section {
-    margin-bottom: 96px;
+    padding: 96px 0;
 }
 
 .visually-hidden {
@@ -372,9 +372,9 @@ ol {
 }
 
 .feature-h {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     color: var(--main-color);
     margin-bottom: 8px;
@@ -384,7 +384,7 @@ ol {
 .feature-p {
     font-size: 16px;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--dark-color);
 }
@@ -405,10 +405,6 @@ ol {
         text-align: center;
     }
 }
-
-@media screen and (max-width: 1157px) {
-}
-
 
 /* for tablet screen */
 @media screen and (min-width: 768px) {
@@ -440,6 +436,10 @@ ol {
 
 /* for desctop screen */
 @media screen and (min-width: 1158px) {
+
+    .second-section {
+        padding: 120px 0;
+    }
 
     .feature-ul {
          display: flex;
@@ -477,28 +477,9 @@ ol {
 
 /* third section */
 
-/* for small screens */
-@media screen and (max-width: 1157px) {
-    .third-section {
-        display: none;;
-    }
-}
-
-
 .third-section {
     padding-bottom: 120px;
 
-}
-
-.doing-h, .team-h {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.11;
-    text-align: center;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
-    color: var(--main-color);
-    margin-bottom: 72px;
 }
 
 .doing-ul, .team-list {
@@ -510,24 +491,46 @@ ol {
    flex-basis: calc((100% - 48px) / 3);
 }
 
+
+.doing-h,
+.team-h {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--main-color);
+    margin-bottom: 72px;
+}
+
+/* for small screens */
+@media screen and (max-width: 1157px) {
+    .third-section {
+        display: none;
+    }
+}
+
+
+
 /* fourth section */
 
 .team-section {
     background-color: var(--btn-active);
-    padding: 96px auto;
+    padding: 96px 0;
 }
 
 .team-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    row-gap: 72px;
+    column-gap: 24px;
     justify-content: center;
 }
 
 .team-item {
     box-sizing: border-box;
     background-color: var(--light-color);
-    /* width: calc((100% - 72px) / 4); */
     border-radius: 0px 0px 4px 4px;
     padding: 0;
     margin: 0;
@@ -610,6 +613,14 @@ ol {
     }
 }
 
+@media screen and (min-width: 1158px) {
+
+    .team-section {
+        padding: 120px 0;
+    }
+}
+
+
 /* customers section */
 
 .customers-section {
@@ -630,6 +641,7 @@ ol {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     row-gap: 72px;
     column-gap: 16px;
 }
@@ -637,9 +649,8 @@ ol {
 .cust-li {
     margin: 0;
     padding: 0;
-    flex-basis: calc((100% - 16px) / 2);
     width: 190px;
-    height: 80px;
+    height: 88px;
 
 }
 
@@ -661,10 +672,15 @@ ol {
 }
 
 
-@media screen and (max-width: 350px) {
-    .customers-section .container {
-        padding: 0;
+@media screen and (max-width: 427px) {
+    .customers-section>.container {
+        padding: 0;   
     }
+    
+    .cust-li {
+        flex-basis: calc((100% - 44px) / 2);
+    }
+
 }
 
 /* for tablet screen */
@@ -677,10 +693,18 @@ ol {
         row-gap: 72px;
         column-gap: 16px;
     }
+    .cust-li {
+        width: 168px;
+        
+    }
  }
 
 /* for desctop screen */
 @media screen and (min-width: 1158px) {
+    .customers-section {
+        padding: 120px 0;
+    }
+    
     .cust-ul {
         display: flex;
         gap: 24px;
@@ -1044,7 +1068,7 @@ ol {
         padding: 0;
         display: block;
         text-align: left;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
         }
 
     .footer-p {
@@ -1429,7 +1453,7 @@ ol {
     height: 100vh;
     
     min-height: 500px;
-    padding: 32px;
+    padding: 40px 35px 40px 40px;
     background-color: var(--light-color);
     z-index: 999;
 
@@ -1452,14 +1476,13 @@ ol {
     padding: 0;
     margin: 0;
     list-style: none;
-    padding-top: 32px;
+    padding-top: 0px;
+    margin-top: 40px;
     margin-bottom: auto;
 }
 
-.mobile-menu .link {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
+.mob-li:not(:last-child) {
+    margin-bottom: 40px;
 }
 
 .mob-menu-link {
@@ -1530,9 +1553,9 @@ ol {
  }
 
 
-@media (max-width: 418px) {
+@media (max-width: 427px) {
     .mob-menu-contacts-item>.select {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
     .mob-net-ul {
         gap: 0px;
