@@ -694,11 +694,12 @@ ol {
 
 /* portfolio button list */
 .btn-list {
-    margin-bottom: 72px;
+    margin-bottom: 48px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
+    column-gap: 24px;
+    row-gap: 16px;
 }
 
 .btn-list .btn {
@@ -739,11 +740,6 @@ ol {
     padding: 96px 0 120px 0;
 }
 
-.portfolio-section>.container {
-    padding: 0 16px;
-    margin: 0 auto;
-}
-
 .portfolio-section h3 p {
     text-transform: inherit;
 }
@@ -755,19 +751,12 @@ ol {
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
-    row-gap: 0px;
+    row-gap: 48px;
     justify-content: center;
     background-color: var(--light-color);
 }
 
-.portfolio-section>.container {
-    padding: 0 16px;
-    margin: auto;
-}
-
-
 .overlay-wrapper {
-    display: block;
     position: relative;
     overflow: hidden;
 }
@@ -813,7 +802,6 @@ ol {
 }
 
 .proj-item {
-    max-width: 356px;
     justify-content: center;
 }
 
@@ -841,24 +829,47 @@ ol {
 }
 
 
+/* for mobile screen */
+@media screen and (max-width: 767px) {
+
+    .portfolio-section {
+        margin: 48px 0;
+        padding: 0;
+    }
+
+    .proj-item {
+        min-width: 320px;
+        max-width: 360px;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
 
 /* for tablet screen */ 
 @media screen and (min-width: 768px) {
     
     .projects {
         row-gap: 72px;
+        justify-content: space-between;
+
     }
     .proj-item {
-        flex-basis: calc((100% - 24px) / 2);
-        padding: 0;
-        margin: 0;
+        max-width: calc((100% - 24px) / 2);
     }
+    .btn-list {
+        margin-bottom: 64px;
+    }
+
 }
 
 /* for desctop screen */
 @media screen and (min-width: 1158px) {
     .projects {
         row-gap: 48px;
+        justify-content: center;
+    }
+    .btn-list {
+        margin-bottom: 72px;
     }
 }
 
