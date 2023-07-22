@@ -673,27 +673,20 @@ ol {
 @media screen and (max-width: 427px) {
     .customers-section>.container {
         padding: 0;   
-    }
-    
+    }  
     .cust-li {
         flex-basis: calc((100% - 44px) / 2);
     }
-
 }
 
 /* for tablet screen */
 @media screen and (min-width: 768px) {
     .cust-ul {
         min-width: 428px;
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 72px;
-        column-gap: 16px;
+        column-gap: 24px;
     }
     .cust-li {
-        width: 168px;
-        
+        width: 168px;   
     }
  }
 
@@ -710,7 +703,6 @@ ol {
 
     .cust-li {
         max-width: calc((100% - 120px) / 6);
-        max=height: 88px;
     }
 }
 
